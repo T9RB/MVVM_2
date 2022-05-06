@@ -1,0 +1,41 @@
+﻿<Page x:Class="WpfApp2.Page7"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:wpfapp2="clr-namespace:WpfApp2" d:DataContext="{d:DesignInstance Type=wpfapp2:ChangeStatusTask}"
+      mc:Ignorable="d" 
+      d:DesignHeight="350" d:DesignWidth="500"
+      Title="Page7">
+
+    <Grid
+        Background="White">
+        <ListBox
+            Name="lbox5" Margin="50,30,50,125"
+            ItemsSource="{Binding TaskCollection}"
+            SelectedItem="{Binding SelectedTask}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock 
+                            Text="{Binding Path=NameTask, UpdateSourceTrigger=PropertyChanged}" 
+                            Width="139"/>
+                        <TextBlock 
+                            Text="{Binding Path=DescriptionTask, UpdateSourceTrigger=PropertyChanged}" 
+                            Width="250"/>
+                        <TextBlock 
+                            Text="{Binding Path=DatePub, UpdateSourceTrigger=PropertyChanged}" 
+                            Width="139"/>
+                        <TextBlock 
+                            Text="{Binding Path=Status.NameStatus, UpdateSourceTrigger=PropertyChanged}" 
+                            Width="139"/>
+                    </StackPanel>
+
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Margin="187,255,185,72"
+                Content="Изменить статус"
+                Command="{Binding ChangeStatus}"/>
+        
+    </Grid>
+</Page>

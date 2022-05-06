@@ -1,0 +1,44 @@
+﻿<Page x:Class="WpfApp2.Page9"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp2"
+      mc:Ignorable="d" 
+      d:DesignHeight="350" d:DesignWidth="500"
+      Title="Page9">
+
+    <Grid
+        Background="White">
+        <ListBox
+            Name="lbox5" Margin="114,131,114,37">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock 
+                            Text="{Binding Path=NameTask, UpdateSourceTrigger=PropertyChanged}" 
+                            Width="139"/>
+                        <TextBlock 
+                            Text="{Binding Path=DescriptionTask, UpdateSourceTrigger=PropertyChanged}" 
+                            Width="250"/>
+                        <TextBlock 
+                            Text="{Binding Path=DatePub, UpdateSourceTrigger=PropertyChanged}" 
+                            Width="139"/>
+                        <TextBlock 
+                            Text="{Binding Path=Status.NameStatus, UpdateSourceTrigger=PropertyChanged}" 
+                            Width="139"/>
+                    </StackPanel>
+
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBox
+            x:Name="tblog"
+            Margin="198,61,134,258"/>
+        <TextBlock Margin="93,61,307,258"
+            Text="Логин: "
+            TextAlignment="Center"/>
+        <Button Margin="366,61,94,258" Click="Button_Click"
+            Content="Поиск"/>
+    </Grid>
+</Page>

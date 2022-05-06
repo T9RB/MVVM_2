@@ -1,0 +1,41 @@
+﻿<Page x:Class="WpfApp2.Page4"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp2" d:DataContext="{d:DesignInstance Type=local:VM_AvaibleTaskList}"
+      mc:Ignorable="d" 
+      d:DesignHeight="350" d:DesignWidth="500"
+      Title="Page4">
+
+    <Grid
+        Background="White">
+        <TextBlock Margin="153,23,153,297"
+                 Text ="Доступные задачи:"
+                 TextAlignment="Center"/>
+        <ListBox
+            Name="lbox2"
+            Height="250" Margin="48,69,48,31"
+            ItemsSource="{Binding AvaibleTaksList}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock 
+                            Text="{Binding Path=NameTask}" 
+                            Width="139"/>
+                        <TextBlock 
+                            Text="{Binding Path=DescriptionTask}" 
+                            Width="250"/>
+                        <TextBlock 
+                            Text="{Binding Path=DatePub}" 
+                            Width="139"/>
+                        <TextBlock 
+                            Text="{Binding Path=Status.NameStatus}" 
+                            Width="139"/>
+                    </StackPanel>
+
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Page>

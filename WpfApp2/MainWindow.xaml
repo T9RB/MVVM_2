@@ -1,0 +1,82 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2" d:DataContext="{d:DesignInstance Type=local:VM_MW}"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="800">
+
+    <Grid>
+        <Frame
+            x:Name="MainFrame"
+            NavigationUIVisibility="Hidden" Margin="241,58,10,59" Height="350" Width="500"/>
+        <StackPanel HorizontalAlignment="Left" Width="241">
+            <Button
+            Content="БД"
+            Command="{Binding DB}"
+            Visibility="Visible" Height="22" Width="36"
+            Margin="0 0 203 0"/>
+            <Button
+                x:Name="btn1"
+                Width="150"
+                Height="30"
+                Margin="0 20 0 0"
+                Content="1. Посмотреть профиль"
+                Command="{Binding Profile}"/>
+            <Button
+                x:Name="btn2"
+                Width="150"
+                Height="30"
+                Margin="0 20 0 0"
+                Content="2. Список пользователей"
+                Command ="{Binding UserList}"/>
+            <Button
+                x:Name="btn3"
+                Width="150"
+                Height="30"
+                Margin="0 20 0 0"
+                Content="3. Список доступных задач"
+                Command="{Binding AvaibleTask}"/>
+            <Button
+                x:Name="btn4"
+                Width="150"
+                Height="30"
+                Margin="0 20 0 0"
+                Content="4. Откликнуться на задачу"
+                Command="{Binding TaskList}"/>
+            <Button
+                x:Name="btn5"
+                Width="150"
+                Height="30"
+                Margin="0 20 0 0"
+                Content="5. История задач"
+                Command="{Binding HistoryTask}"/>
+            <Button
+                x:Name="btn6"
+                Width="150"
+                Height="30"
+                Margin="0 20 0 0"
+                Content="6. Изменить статус задачи"
+                Command="{Binding ChangeStatusTask}"/>
+            <Button
+                x:Name="btn7"
+                Width="150"
+                Height="30"
+                Margin="0 20 0 0"
+                Content="7. Фильтр задач по дате"/>
+            <Button
+                x:Name="btn8"
+                Width="150"
+                Height="30"
+                Margin="0 20 0 0"
+                Content="8. Найти задачу"/>
+            <Button
+                x:Name="btn9"
+                Width="150"
+                Height="30"
+                Margin="0 20 0 0"
+                Content="9. Добавить задачу"/>
+        </StackPanel>
+    </Grid>
+</Window>
