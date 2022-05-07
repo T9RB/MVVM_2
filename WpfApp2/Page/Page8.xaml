@@ -3,7 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:WpfApp2"
+      xmlns:local="clr-namespace:WpfApp2" d:DataContext="{d:DesignInstance Type=local:FiltDate}"
       mc:Ignorable="d" 
       d:DesignHeight="350" d:DesignWidth="500"
       Title="Page8">
@@ -35,15 +35,15 @@
         <Calendar x:Name="calendar1"
                   FirstDayOfWeek="Monday" 
                   Margin="10,0,313,201"
-                  >
+                  SelectedDate="{Binding Calendar1}">
         </Calendar>
         <Calendar x:Name="calendar2"
                   FirstDayOfWeek="Monday" 
                   Margin="313,0,10,201"
-                  >
+                  SelectedDate="{Binding Calendar2}">
         </Calendar>
         <Button Margin="206,118,206,206"
-            Content="Фильтр" Click="Button_Click"/>
+            Content="Фильтр"/>
 
 
 

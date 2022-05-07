@@ -22,22 +22,19 @@ namespace WpfApp2
     /// </summary>
     public partial class Page8 : Page
     {
-        public List<Task> CollectionTasks = new(Service.db.Tasks.Include(x => x.Status));
-
         public Page8()
         {
             InitializeComponent();
-            CollectionTasks = new(Service.db.Tasks.Include(x => x.Status));
-            
+            DataContext = new FiltDate();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var fdt = calendar1.SelectedDate;
-            var sdt = calendar2.SelectedDate;
-            var CollectionTasks1 = CollectionTasks.Where(x => x.DatePub >= fdt && x.DatePub <= sdt).OrderBy(x => x.DatePub).ToList();
-            lbox5.ItemsSource = CollectionTasks1;
-            MessageBox.Show($"Найдено {CollectionTasks1.Count} задач!");
+            //var fdt = calendar1.SelectedDate;
+            //var sdt = calendar2.SelectedDate;
+            //var CollectionTasks1 = CollectionTasks.Where(x => x.DatePub >= fdt && x.DatePub <= sdt).OrderBy(x => x.DatePub).ToList();
+            //lbox5.ItemsSource = CollectionTasks1;
+            //MessageBox.Show($"Найдено {CollectionTasks1.Count} задач!");
         }
 
 
