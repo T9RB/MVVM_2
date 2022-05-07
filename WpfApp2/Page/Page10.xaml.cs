@@ -23,31 +23,7 @@ namespace WpfApp2
         public Page10()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (tb1.Text == null || tb2.Text == null)
-            {
-                MessageBox.Show("Введите имя и описание задачи!");
-                return;
-            }
-            if (tb1.Text != null && tb2.Text != null)
-            {
-                Task task = new()
-                {
-                    NameTask = tb1.Text,
-                    DescriptionTask = tb2.Text,
-                    DatePub = DateTime.Now,
-                    CreatorId = Service.user.Userid,
-                    AcceptorId = Service.user.Userid,
-                    Statusid = 1
-                };
-                Service.db.Tasks.Add(task);
-                Service.db.SaveChanges();
-                MessageBox.Show("Данные добавлены");
-
-            }
+            DataContext = new NewTask();
         }
     }
 }

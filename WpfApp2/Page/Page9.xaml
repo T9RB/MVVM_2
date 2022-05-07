@@ -3,7 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:WpfApp2"
+      xmlns:local="clr-namespace:WpfApp2" d:DataContext="{d:DesignInstance Type=local:FindTask}"
       mc:Ignorable="d" 
       d:DesignHeight="350" d:DesignWidth="500"
       Title="Page9">
@@ -11,7 +11,8 @@
     <Grid
         Background="White">
         <ListBox
-            Name="lbox5" Margin="114,131,114,37">
+            Name="lbox5" Margin="114,131,114,37"
+            ItemsSource="{Binding FindedTask}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -34,11 +35,13 @@
         </ListBox>
         <TextBox
             x:Name="tblog"
-            Margin="198,61,134,258"/>
+            Margin="198,61,134,258"
+            Text ="{Binding Login}"/>
         <TextBlock Margin="93,61,307,258"
             Text="Логин: "
             TextAlignment="Center"/>
-        <Button Margin="366,61,94,258" Click="Button_Click"
-            Content="Поиск"/>
+        <Button Margin="366,61,94,258"
+                Content="Поиск"
+                Command="{Binding Find}"/>
     </Grid>
 </Page>

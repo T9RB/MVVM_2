@@ -26,19 +26,7 @@ namespace WpfApp2
         public Page9()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (tblog.Text == null)
-            {
-                MessageBox.Show("Введите логин, по которому хотите искать");
-            }
-            if (tblog.Text != null)
-            {
-                CollectionTasks = new(Service.db.Tasks.Where(x => x.Creator.Login == tblog.Text));
-                lbox5.ItemsSource = CollectionTasks; 
-            }
+            DataContext = new FindTask();
         }
     }
 }

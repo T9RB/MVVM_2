@@ -11,7 +11,8 @@
     <Grid
         Background="White">
         <ListBox
-            Name="lbox5" Margin="93,159,93,10">
+            Name="lbox5" Margin="93,159,93,10"
+            ItemsSource="{Binding FiltTask}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -43,7 +44,8 @@
                   SelectedDate="{Binding Calendar2}">
         </Calendar>
         <Button Margin="206,118,206,206"
-            Content="Фильтр"/>
+            Content="Фильтр"
+            Command="{Binding Filter}"/>
 
 
 

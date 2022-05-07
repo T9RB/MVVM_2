@@ -22,6 +22,9 @@ namespace WpfApp2
         private RelayCommand takslist;
         private RelayCommand historytasks;
         private RelayCommand changestatustask;
+        private RelayCommand filttask;
+        private RelayCommand findtask;
+        private RelayCommand newtask;
         private RelayCommand db;
 
         public RelayCommand Profile => profile ??
@@ -106,7 +109,47 @@ namespace WpfApp2
                                                }
                                            }));
 
+        public RelayCommand FiltTask => filttask ??
+                                        (filttask = new RelayCommand((x) =>
+                                        {
+                                            if (Service.user.Login == null)
+                                            {
+                                                MessageBox.Show("Вы не авторизовались!");
+                                                return;
+                                            }
+                                            if (Service.user.Login != null)
+                                            {
+                                                Service.frame.Navigate(new Page8());
+                                            }
+                                        }));
 
+        public RelayCommand FindTask => findtask ??
+                                        (findtask = new RelayCommand((x) =>
+                                        {
+                                            if (Service.user.Login == null)
+                                            {
+                                                MessageBox.Show("Вы не авторизовались!");
+                                                return;
+                                            }
+                                            if (Service.user.Login != null)
+                                            {
+                                                Service.frame.Navigate(new Page9());
+                                            }
+                                        }));
+
+        public RelayCommand NewTask => newtask ??
+                                       (newtask = new RelayCommand((x) =>
+                                       {
+                                           if (Service.user.Login == null)
+                                           {
+                                               MessageBox.Show("Вы не авторизовались!");
+                                               return;
+                                           }
+                                           if (Service.user.Login != null)
+                                           {
+                                               Service.frame.Navigate(new Page10());
+                                           }
+                                       }));
         public RelayCommand DB => db ??
             (db = new RelayCommand((x) =>
             {

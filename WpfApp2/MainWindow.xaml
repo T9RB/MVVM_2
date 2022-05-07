@@ -68,19 +68,22 @@
                 Width="150"
                 Height="30"
                 Margin="0 20 0 0"
-                Content="7. Фильтр задач по дате"/>
+                Content="7. Фильтр задач по дате"
+                Command="{Binding FiltTask}"/>
             <Button
                 x:Name="btn8"
                 Width="150"
                 Height="30"
                 Margin="0 20 0 0"
-                Content="8. Найти задачу"/>
+                Content="8. Найти задачу"
+                Command="{Binding FindTask}"/>
             <Button
                 x:Name="btn9"
                 Width="150"
                 Height="30"
                 Margin="0 20 0 0"
-                Content="9. Добавить задачу"/>
+                Content="9. Добавить задачу"
+                Command="{Binding NewTask}"/>
         </StackPanel>
     </Grid>
 </Window>

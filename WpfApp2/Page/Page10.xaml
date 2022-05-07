@@ -3,7 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:WpfApp2"
+      xmlns:local="clr-namespace:WpfApp2" d:DataContext="{d:DesignInstance Type=local:NewTask}"
       mc:Ignorable="d" 
       d:DesignHeight="350" d:DesignWidth="500"
       Title="Page10">
@@ -15,12 +15,14 @@
                 x:Name="tb1"
                 Width="150"
                 Height="25"
-                Margin="0 30 110 0"/>
+                Margin="0 30 110 0"
+                Text ="{Binding NameTask}"/>
             <TextBox
                 x:Name="tb2"
                 Width="150"
                 Height="25"
-                Margin="0 30 110 0"/>
+                Margin="0 30 110 0"
+                Text="{Binding DiscripTask}"/>
             <TextBlock 
                 Width="80"
                 Height="25"
@@ -35,7 +37,8 @@
                 Width="100"
                 Height="30"
                 Margin="0 30 0 0"
-                Content="Добавить" Click="Button_Click"/>
+                Content="Добавить"
+                Command="{Binding NewTask1}"/>
         </StackPanel>
     </Grid>
 </Page>
