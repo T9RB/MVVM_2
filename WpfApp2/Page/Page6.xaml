@@ -9,29 +9,35 @@
       Title="Page6">
 
     <Grid
-        Background="White">
+        Background="AntiqueWhite">
         <TextBlock Margin="183,31,183,298"
                    TextAlignment="Center"
-                   Text ="Ваша история задач"/>
+                   Text ="Ваша история задач"
+                   FontWeight="Bold"/>
         <ListBox
             Name="lbox4"
             Height="250" Margin="48,69,48,31"
-            ItemsSource="{Binding HistoryUserTasks}">
+            ItemsSource="{Binding HistoryUserTasks}"
+            Background="AntiqueWhite">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
                         <TextBlock 
                             Text="{Binding Path=NameTask}" 
-                            Width="139"/>
+                            Width="139"
+                            FontWeight="Bold"/>
                         <TextBlock 
                             Text="{Binding Path=DescriptionTask}" 
-                            Width="250"/>
+                            Width="250"
+                            FontWeight="Bold"/>
                         <TextBlock 
                             Text="{Binding Path=DatePub}" 
-                            Width="139"/>
+                            Width="139"
+                            FontWeight="Bold"/>
                         <TextBlock 
                             Text="{Binding Path=Status.NameStatus}" 
-                            Width="139"/>
+                            Width="139"
+                            FontWeight="Bold"/>
                     </StackPanel>
 
                 </DataTemplate>

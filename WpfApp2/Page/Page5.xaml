@@ -9,29 +9,35 @@
       Title="Page5">
 
     <Grid
-        Background="White">
+        Background="AntiqueWhite">
         <TextBlock Margin="150,32,150,292"
                    TextAlignment="Center"
-                   Text="Откликнуться на задачу:"/>
+                   Text="Откликнуться на задачу:"
+                   FontWeight="Bold"/>
         <ListBox
                 Name="lbox3" Margin="50,77,50,78"
                 ItemsSource="{Binding TaksList}"
-                SelectedItem="{Binding SelectedTask}">
+                SelectedItem="{Binding SelectedTask}"
+                Background="AntiqueWhite">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
                         <TextBlock 
                                 Text="{Binding Path=NameTask, UpdateSourceTrigger=PropertyChanged}" 
-                                Width="139"/>
+                                Width="139"
+                                FontWeight="Bold"/>
                         <TextBlock 
                                 Text="{Binding Path=DescriptionTask, UpdateSourceTrigger=PropertyChanged}" 
-                                Width="250"/>
+                                Width="250"
+                                FontWeight="Bold"/>
                         <TextBlock 
                                 Text="{Binding Path=DatePub, UpdateSourceTrigger=PropertyChanged}" 
-                                Width="139"/>
+                                Width="139"
+                                FontWeight="Bold"/>
                         <TextBlock 
                                 Text="{Binding Path=Status.NameStatus, UpdateSourceTrigger=PropertyChanged}" 
-                                Width="139"/>
+                                Width="139"
+                                FontWeight="Bold"/>
                     </StackPanel>
 
                 </DataTemplate>
@@ -39,6 +45,8 @@
         </ListBox>
         <Button Margin="186,287,186,40"
                 Content="Откликнуться"
-                Command="{Binding NewStatus}"/>
+                Command="{Binding NewStatus}"
+                FontWeight="Bold"
+                Background="FloralWhite"/>
     </Grid>
 </Page>

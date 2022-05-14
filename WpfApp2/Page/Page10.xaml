@@ -9,36 +9,42 @@
       Title="Page10">
 
     <Grid
-        Background="White">
+        Background="AntiqueWhite">
         <StackPanel>
             <TextBox
                 x:Name="tb1"
                 Width="150"
                 Height="25"
                 Margin="0 30 110 0"
-                Text ="{Binding NameTask}"/>
+                Text ="{Binding NameTask}"
+                Background="AntiqueWhite"/>
             <TextBox
                 x:Name="tb2"
                 Width="150"
                 Height="25"
                 Margin="0 30 110 0"
-                Text="{Binding DiscripTask}"/>
+                Text="{Binding DiscripTask}"
+                Background="AntiqueWhite"/>
             <TextBlock 
                 Width="80"
                 Height="25"
                 Margin="0 -130 390 0"
-                Text="Имя задачи:"/>
+                Text="Имя задачи:"
+                FontWeight="Bold"/>
             <TextBlock 
                 Width="100"
                 Height="25"
                 Margin="0 -25 390 0"
-                Text="Описание задачи:"/>
+                Text="Описание задачи:"
+                FontWeight="Bold"/>
             <Button 
                 Width="100"
                 Height="30"
                 Margin="0 30 0 0"
                 Content="Добавить"
-                Command="{Binding NewTask1}"/>
+                Command="{Binding NewTask1}"
+                FontWeight="Bold"
+                Background="FloralWhite"/>
         </StackPanel>
     </Grid>
 </Page>

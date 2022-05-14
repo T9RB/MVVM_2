@@ -9,25 +9,34 @@
       Title="Page9">
 
     <Grid
-        Background="White">
+        Background="AntiqueWhite">
         <ListBox
             Name="lbox5" Margin="114,131,114,37"
-            ItemsSource="{Binding FindedTask}">
+            ItemsSource="{Binding FindedTask}"
+            Background="AntiqueWhite">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
                         <TextBlock 
                             Text="{Binding Path=NameTask, UpdateSourceTrigger=PropertyChanged}" 
-                            Width="139"/>
+                            Width="139"
+                            Background="FloralWhite"
+                            FontWeight="Bold"/>
                         <TextBlock 
                             Text="{Binding Path=DescriptionTask, UpdateSourceTrigger=PropertyChanged}" 
-                            Width="250"/>
+                            Width="250"
+                            Background="FloralWhite"
+                            FontWeight="Bold"/>
                         <TextBlock 
                             Text="{Binding Path=DatePub, UpdateSourceTrigger=PropertyChanged}" 
-                            Width="139"/>
+                            Width="139"
+                            Background="FloralWhite"
+                            FontWeight="Bold"/>
                         <TextBlock 
                             Text="{Binding Path=Status.NameStatus, UpdateSourceTrigger=PropertyChanged}" 
-                            Width="139"/>
+                            Width="139"
+                            Background="FloralWhite"
+                            FontWeight="Bold"/>
                     </StackPanel>
 
                 </DataTemplate>
@@ -36,12 +45,15 @@
         <TextBox
             x:Name="tblog"
             Margin="198,61,134,258"
-            Text ="{Binding Login}"/>
+            Text ="{Binding Login}"
+            Background="FloralWhite"/>
         <TextBlock Margin="93,61,307,258"
             Text="Логин: "
+            FontWeight="Bold"
             TextAlignment="Center"/>
         <Button Margin="366,61,94,258"
                 Content="Поиск"
-                Command="{Binding Find}"/>
+                Command="{Binding Find}"
+                FontWeight="Bold"/>
     </Grid>
 </Page>

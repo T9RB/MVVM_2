@@ -9,86 +9,100 @@
       Title="Page11">
 
     <Grid
-        Background="White">
+        Background="AntiqueWhite">
         <StackPanel>
             <TextBox
                 x:Name="tb1"
                 Width="150"
                 Height="25"
                 Margin="0 30 110 0"
-                Text="{Binding FName}"/>
+                Text="{Binding FName}"
+                Background="FloralWhite"/>
             <TextBox
                 x:Name="tb2"
                 Width="150"
                 Height="25"
                 Margin="0 25 110 0"
-                Text="{Binding SName}"/>
+                Text="{Binding SName}"
+                Background="FloralWhite"/>
             <TextBlock 
                 Width="80"
                 Height="25"
                 Margin="0 -130 390 0"
                 Text="Фамилия:"
-                TextAlignment="Center"/>
+                TextAlignment="Center"
+                FontWeight="Bold"/>
             <TextBlock 
                 Width="100"
                 Height="25"
                 Margin="0 -25 390 0"
                 Text="Имя:"
-                TextAlignment="Center"/>
+                TextAlignment="Center"
+                FontWeight="Bold"/>
             <TextBlock 
                 Width="100"
                 Height="25"
                 Margin="0 25 390 0"
                 Text="Отчество:"
-                TextAlignment="Center"/>
+                TextAlignment="Center"
+                FontWeight="Bold"/>
             <TextBlock 
                 Width="100"
                 Height="25"
                 Margin="0 25 390 0"
                 Text="Логин:"
-                TextAlignment="Center"/>
+                TextAlignment="Center"
+                FontWeight="Bold"/>
             <TextBlock 
                 Width="100"
                 Height="25"
                 Margin="0 25 390 0"
                 Text="Пароль:"
-                TextAlignment="Center"/>
+                TextAlignment="Center"
+                FontWeight="Bold"/>
             <TextBlock 
                 Width="100"
                 Height="25"
                 Margin="0 25 390 0"
                 Text="Номер телефона:"
-                TextAlignment="Center"/>
+                TextAlignment="Center"
+                FontWeight="Bold"/>
             <TextBox
                 x:Name="tb3"
                 Width="150"
                 Height="25"
                 Margin="0 -330 110 0"
-                Text="{Binding LName}"/>
+                Text="{Binding LName}"
+                Background="FloralWhite"/>
             <TextBox
                 x:Name="tb4"
                 Width="150"
                 Height="25"
                 Margin="0 -230 110 0"
-                Text="{Binding Login}"/>
+                Text="{Binding Login}"
+                Background="FloralWhite"/>
             <TextBox
                 x:Name="tb5"
                 Width="150"
                 Height="25"
                 Margin="0 -130 110 0"
-                Text="{Binding Password}"/>
+                Text="{Binding Password}"
+                Background="FloralWhite"/>
             <TextBox
                 x:Name="tb6"
                 Width="150"
                 Height="25"
                 Margin="0 -30 110 0"
-                Text="{Binding Number}"/>
+                Text="{Binding Number}"
+                Background="FloralWhite"/>
             <Button 
                 Width="100"
                 Height="30"
                 Margin="270 -300 0 0"
                 Content="Регистрация"
-                Command="{Binding Register}"/>
+                Command="{Binding Register}"
+                FontWeight="Bold"
+                Background="FloralWhite"/>
         </StackPanel>
     </Grid>
 </Page>

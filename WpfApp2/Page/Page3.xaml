@@ -9,18 +9,24 @@
       Title="Page3">
 
     <Grid 
-        Background="White"
+        Background="AntiqueWhite"
         DataContext="{Binding }">
         <TextBlock
-            Text="Список пользователей:" Margin="185,10,178,310"/>
+            Text="Список пользователей:" 
+            Margin="185,10,178,310"
+            FontWeight="Bold"/>
         <ListBox
             Name="lbox1"
+            Background="AntiqueWhite"
             Height="250" Margin="48,69,48,31">
            <ListBox.ItemTemplate>
                <DataTemplate>
                    <StackPanel>
                        <TextBlock 
-                           Text="{Binding Path=Login}" Width="139"/>
+                           Text="{Binding Path=Login}" 
+                           Width="139"
+                           FontWeight="Bold"
+                           />
                     </StackPanel>
                    
                </DataTemplate>

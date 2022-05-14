@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:WpfApp2" d:DataContext="{d:DesignInstance Type=local:VM_Authorization}"
       mc:Ignorable="d" 
       d:DesignHeight="350" d:DesignWidth="500"
-      Title="Page1" Background="White">
+      Title="Page1" Background="AntiqueWhite">
 
     <Grid>
         <Border 
@@ -14,12 +14,14 @@
             <StackPanel 
                 Height="159" Margin="-13,0,-13,0">
                 <TextBlock 
-                    Text="Авторизация" TextAlignment="Center" Margin="0 0 0 10"/>
+                    Text="Авторизация" TextAlignment="Center" Margin="0 0 0 10"
+                     FontWeight="Bold"/>
                 <DockPanel 
                     LastChildFill="True" Margin="0,0,0,15">
                     <TextBlock 
-                        Text="Логин:   " 
-                        Background="FloralWhite"/>
+                        Text="Логин:   "
+                        FontWeight="Bold"
+                        Background="AntiqueWhite"/>
                     <TextBox
                         x:Name="Log_Box"
                         Text="{Binding Login}"
@@ -29,7 +31,8 @@
                     LastChildFill="True" Margin="0 0 0 15">
                     <TextBlock 
                         Text="Пароль: "
-                        Background="FloralWhite"/>
+                        FontWeight="Bold"
+                        Background="AntiqueWhite"/>
                     <TextBox 
                         Name="PassBox"
                         Text="{Binding Password}"
@@ -40,14 +43,16 @@
                     Height="20"
                     Content="Войти" 
                     Background="FloralWhite"
-                    Command="{Binding Auth}"/>
+                    Command="{Binding Auth}"
+                    FontWeight="Bold"/>
                 <Button 
                     x:Name="Buttno2"
                     Height="20"
                     Content="Регистрация"
                     Margin="0 5 0 0"
                     Background="FloralWhite"
-                    Command="{Binding Registr}"/>
+                    Command="{Binding Registr}"
+                    FontWeight="Bold"/>
             </StackPanel>
         </Border>
 

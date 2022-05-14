@@ -8,26 +8,31 @@
       Title="Page7">
 
     <Grid
-        Background="White">
+        Background="AntiqueWhite">
         <ListBox
             Name="lbox5" Margin="50,30,50,125"
             ItemsSource="{Binding TaskCollection}"
-            SelectedItem="{Binding SelectedTask}">
+            SelectedItem="{Binding SelectedTask}"
+            Background="AntiqueWhite">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
                         <TextBlock 
                             Text="{Binding Path=NameTask, UpdateSourceTrigger=PropertyChanged}" 
-                            Width="139"/>
+                            Width="139"
+                            FontWeight="Bold"/>
                         <TextBlock 
                             Text="{Binding Path=DescriptionTask, UpdateSourceTrigger=PropertyChanged}" 
-                            Width="250"/>
+                            Width="250"
+                            FontWeight="Bold"/>
                         <TextBlock 
                             Text="{Binding Path=DatePub, UpdateSourceTrigger=PropertyChanged}" 
-                            Width="139"/>
+                            Width="139"
+                            FontWeight="Bold"/>
                         <TextBlock 
                             Text="{Binding Path=Status.NameStatus, UpdateSourceTrigger=PropertyChanged}" 
-                            Width="139"/>
+                            Width="139"
+                            FontWeight="Bold"/>
                     </StackPanel>
 
                 </DataTemplate>
@@ -35,7 +40,8 @@
         </ListBox>
         <Button Margin="187,255,185,72"
                 Content="Изменить статус"
-                Command="{Binding ChangeStatus}"/>
+                Command="{Binding ChangeStatus}"
+                FontWeight="Bold"/>
         
     </Grid>
 </Page>

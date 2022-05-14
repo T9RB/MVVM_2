@@ -8,13 +8,14 @@
       d:DesignHeight="350" d:DesignWidth="500"
       Title="Page2">
 
-    <Grid Background="White">
+    <Grid Background="AntiqueWhite">
        <StackPanel>
            <TextBlock
                Height="20"
                Width="100"
                Margin="0,33,368,0"
-               Text="Фамилия: "/>
+               Text="Фамилия: "
+               FontWeight="Bold"/>
            <TextBlock
                Name="tb1"
                Height="20"
@@ -25,7 +26,8 @@
                Height="20"
                Width="100"
                Margin="0,33,368,0"
-               Text="Имя: "/>
+               Text="Имя: "
+               FontWeight="Bold"/>
            <TextBlock
                Name="tb2"
                Height="20"
@@ -36,7 +38,8 @@
                Height="20"
                Width="100"
                Margin="0,33,368,0"
-               Text="Отчество: "/>
+               Text="Отчество: "
+               FontWeight="Bold"/>
            <TextBlock
                Name="tb3"
                Height="20"
@@ -47,7 +50,8 @@
                Height="20"
                Width="100"
                Margin="0,33,368,0"
-               Text="Номер: "/>
+               Text="Номер: "
+               FontWeight="Bold"/>
            <TextBlock
                Name="tb4"
                Height="20"
