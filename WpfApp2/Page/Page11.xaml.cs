@@ -25,5 +25,11 @@ namespace WpfApp2
             InitializeComponent();
             DataContext = new VM_Reg();
         }
+
+        private void Tb5_OnPasswordChangedReg(object sender, RoutedEventArgs e)
+        {
+            if (this.DataContext != null)
+            { ((VM_Reg)this.DataContext).Password = ((PasswordBox)sender).Password; }
+        }
     }
 }

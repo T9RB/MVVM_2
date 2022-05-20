@@ -28,14 +28,6 @@ namespace WpfApp2
             DataContext = new FiltDate();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            //var fdt = calendar1.SelectedDate;
-            //var sdt = calendar2.SelectedDate;
-            //var CollectionTasks1 = CollectionTasks.Where(x => x.DatePub >= fdt && x.DatePub <= sdt).OrderBy(x => x.DatePub).ToList();
-            //lbox5.ItemsSource = CollectionTasks1;
-            //MessageBox.Show($"Найдено {CollectionTasks1.Count} задач!");
-        }
 
 
     }

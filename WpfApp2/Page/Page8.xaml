@@ -4,16 +4,39 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfApp2" d:DataContext="{d:DesignInstance Type=local:FiltDate}"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
-      d:DesignHeight="350" d:DesignWidth="500"
+      d:DesignHeight="450" d:DesignWidth="570"
       Title="Page8">
 
     <Grid
-        Background="AntiqueWhite">
+        Background="#ffdadada">
+        <Border
+            HorizontalAlignment="Left"
+            Width="505" Margin="34,55,0,329"
+            CornerRadius="30"
+            Background="White">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30"
+                                  Color="LightGray"
+                                  ShadowDepth="0"/>
+            </Border.Effect>
+            <StackPanel>
+                <TextBox
+                    Margin="0 20 250 0"
+                    materialDesign:HintAssist.Hint="Введите дату начала" Width="141"
+                    Text="{Binding Date1}"/>
+                <TextBox 
+                    Margin="0 -25 -250 0"
+                    materialDesign:HintAssist.Hint="Введите дату конца" 
+                    Text="{Binding Date2}"
+                    Width="141"/>
+            </StackPanel>
+        </Border>
         <ListBox
-            Name="lbox5" Margin="93,159,93,10"
+            Name="lbox5" Margin="93,213,93,50"
             ItemsSource="{Binding FiltTask}"
-            Background="AntiqueWhite">
+            Background="White">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -42,21 +65,10 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <Calendar x:Name="calendar1"
-                  FirstDayOfWeek="Monday" 
-                  Margin="10,0,313,201"
-                  SelectedDate="{Binding Calendar1}">
-        </Calendar>
-        <Calendar x:Name="calendar2"
-                  FirstDayOfWeek="Monday" 
-                  Margin="313,0,10,201"
-                  SelectedDate="{Binding Calendar2}">
-        </Calendar>
-        <Button Margin="206,118,206,206"
+        <Button Margin="206,161,206,257"
             Content="Фильтр"
             Command="{Binding Filter}"
-            FontWeight="Bold"
-            Background="FloralWhite"/>
+            FontWeight="Bold"/>
 
 
 

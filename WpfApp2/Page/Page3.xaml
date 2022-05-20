@@ -5,25 +5,26 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfApp2"
       mc:Ignorable="d" 
-      d:DesignHeight="350" d:DesignWidth="500"
+      d:DesignHeight="450" d:DesignWidth="570"
       Title="Page3">
 
     <Grid 
-        Background="AntiqueWhite"
-        DataContext="{Binding }">
+        Background="#ffdadada">
         <TextBlock
             Text="Список пользователей:" 
-            Margin="185,10,178,310"
+            Margin="182,42,182,364"
+            Style="{StaticResource MaterialDesignBody1TextBlock}"
             FontWeight="Bold"/>
         <ListBox
             Name="lbox1"
-            Background="AntiqueWhite"
-            Height="250" Margin="48,69,48,31">
+            Background="White"
+            Height="250" Margin="48,91,48,109">
            <ListBox.ItemTemplate>
                <DataTemplate>
                    <StackPanel>
                        <TextBlock 
                            Text="{Binding Path=Login}" 
+                           Style="{StaticResource MaterialDesignBody1TextBlock}"
                            Width="139"
                            FontWeight="Bold"
                            />

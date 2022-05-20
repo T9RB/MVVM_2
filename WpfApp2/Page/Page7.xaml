@@ -4,33 +4,37 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:wpfapp2="clr-namespace:WpfApp2" d:DataContext="{d:DesignInstance Type=wpfapp2:ChangeStatusTask}"
       mc:Ignorable="d" 
-      d:DesignHeight="350" d:DesignWidth="500"
+      d:DesignHeight="450" d:DesignWidth="570"
       Title="Page7">
 
     <Grid
-        Background="AntiqueWhite">
+        Background="#ffdadada">
         <ListBox
-            Name="lbox5" Margin="50,30,50,125"
+            Name="lbox5" Margin="50,61,50,125"
             ItemsSource="{Binding TaskCollection}"
             SelectedItem="{Binding SelectedTask}"
-            Background="AntiqueWhite">
+            Background="White">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
                         <TextBlock 
                             Text="{Binding Path=NameTask, UpdateSourceTrigger=PropertyChanged}" 
+                            Style="{StaticResource MaterialDesignBody1TextBlock}"
                             Width="139"
                             FontWeight="Bold"/>
                         <TextBlock 
                             Text="{Binding Path=DescriptionTask, UpdateSourceTrigger=PropertyChanged}" 
+                            Style="{StaticResource MaterialDesignBody1TextBlock}"
                             Width="250"
                             FontWeight="Bold"/>
                         <TextBlock 
                             Text="{Binding Path=DatePub, UpdateSourceTrigger=PropertyChanged}" 
+                            Style="{StaticResource MaterialDesignBody1TextBlock}"
                             Width="139"
                             FontWeight="Bold"/>
                         <TextBlock 
                             Text="{Binding Path=Status.NameStatus, UpdateSourceTrigger=PropertyChanged}" 
+                            Style="{StaticResource MaterialDesignBody1TextBlock}"
                             Width="139"
                             FontWeight="Bold"/>
                     </StackPanel>
@@ -38,7 +42,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button Margin="187,255,185,72"
+        <Button Margin="186,351,186,67"
                 Content="Изменить статус"
                 Command="{Binding ChangeStatus}"
                 FontWeight="Bold"/>

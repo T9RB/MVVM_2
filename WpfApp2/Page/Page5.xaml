@@ -5,37 +5,42 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfApp2" d:DataContext="{d:DesignInstance Type=local:VM_NewStatusTask}"
       mc:Ignorable="d" 
-      d:DesignHeight="350" d:DesignWidth="500"
+      d:DesignHeight="450" d:DesignWidth="570"
       Title="Page5">
 
     <Grid
-        Background="AntiqueWhite">
-        <TextBlock Margin="150,32,150,292"
+        Background="#ffdadada">
+        <TextBlock Margin="150,32,150,388"
                    TextAlignment="Center"
                    Text="Откликнуться на задачу:"
+                   Style="{StaticResource MaterialDesignBody1TextBlock}"
                    FontWeight="Bold"/>
         <ListBox
-                Name="lbox3" Margin="50,77,50,78"
+                Name="lbox3" Margin="50,77,50,134"
                 ItemsSource="{Binding TaksList}"
                 SelectedItem="{Binding SelectedTask}"
-                Background="AntiqueWhite">
+                Background="White">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
                         <TextBlock 
                                 Text="{Binding Path=NameTask, UpdateSourceTrigger=PropertyChanged}" 
+                                Style="{StaticResource MaterialDesignBody1TextBlock}"
                                 Width="139"
                                 FontWeight="Bold"/>
                         <TextBlock 
                                 Text="{Binding Path=DescriptionTask, UpdateSourceTrigger=PropertyChanged}" 
+                                Style="{StaticResource MaterialDesignBody1TextBlock}"
                                 Width="250"
                                 FontWeight="Bold"/>
                         <TextBlock 
                                 Text="{Binding Path=DatePub, UpdateSourceTrigger=PropertyChanged}" 
+                                Style="{StaticResource MaterialDesignBody1TextBlock}"
                                 Width="139"
                                 FontWeight="Bold"/>
                         <TextBlock 
                                 Text="{Binding Path=Status.NameStatus, UpdateSourceTrigger=PropertyChanged}" 
+                                Style="{StaticResource MaterialDesignBody1TextBlock}"
                                 Width="139"
                                 FontWeight="Bold"/>
                     </StackPanel>
@@ -43,10 +48,9 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button Margin="186,287,186,40"
-                Content="Откликнуться"
-                Command="{Binding NewStatus}"
-                FontWeight="Bold"
-                Background="FloralWhite"/>
+        <Button 
+            Margin="186,345,186,73"
+            Content="Откликнуться"
+            Command="{Binding NewStatus}"/>
     </Grid>
 </Page>

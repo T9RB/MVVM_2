@@ -4,47 +4,58 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfApp2" d:DataContext="{d:DesignInstance Type=local:NewTask}"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
-      d:DesignHeight="350" d:DesignWidth="500"
+      d:DesignHeight="450" d:DesignWidth="570"
       Title="Page10">
 
     <Grid
-        Background="AntiqueWhite">
-        <StackPanel>
-            <TextBox
-                x:Name="tb1"
-                Width="150"
-                Height="25"
-                Margin="0 30 110 0"
-                Text ="{Binding NameTask}"
-                Background="AntiqueWhite"/>
-            <TextBox
-                x:Name="tb2"
-                Width="150"
-                Height="25"
-                Margin="0 30 110 0"
-                Text="{Binding DiscripTask}"
-                Background="AntiqueWhite"/>
-            <TextBlock 
-                Width="80"
-                Height="25"
-                Margin="0 -130 390 0"
-                Text="Имя задачи:"
-                FontWeight="Bold"/>
-            <TextBlock 
-                Width="100"
-                Height="25"
-                Margin="0 -25 390 0"
-                Text="Описание задачи:"
-                FontWeight="Bold"/>
-            <Button 
-                Width="100"
-                Height="30"
-                Margin="0 30 0 0"
-                Content="Добавить"
-                Command="{Binding NewTask1}"
-                FontWeight="Bold"
-                Background="FloralWhite"/>
-        </StackPanel>
+        Background="#ffdadada">
+        <Border
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center"
+            Background="White"
+            CornerRadius="30"
+            Width="516" 
+            Height="382">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30"
+                                  Color="LightGray"
+                                  ShadowDepth="0"/>
+            </Border.Effect>
+            <StackPanel Margin="20,41,20,41">
+                <TextBlock 
+                    Margin="0 30 0 0"
+                    Style="{StaticResource MaterialDesignBody1TextBlock}"
+                    Text="Добавление задачи"
+                    FontWeight="Bold" Width="411"/>
+                <TextBox
+                    x:Name="tb1"
+                    Width="220"
+                    Margin="0,30,0,0"
+                    materialDesign:HintAssist.Hint="Введите название задачи"
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                    Text ="{Binding NameTask}"/>
+                <TextBox
+                    x:Name="tb2"
+                    Width="220"
+                    Margin="0,30,0,0"
+                    materialDesign:HintAssist.Hint="Введите описание задачи"
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                    Text="{Binding DiscripTask}"
+                    Background="White"/>
+                <Button 
+                    Width="113"
+                    Height="30"
+                    Margin="0,30,0,0"
+                    Content="Добавить"
+                    Command="{Binding NewTask1}"
+                    FontWeight="Bold"/>
+
+
+
+            </StackPanel>
+        </Border>
+
     </Grid>
 </Page>

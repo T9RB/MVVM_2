@@ -23,20 +23,28 @@ public class VM_Reg : VM_Super
 
                                         if (FName != null && SName != null && LName != null && Login != null && Password != null && Number != null)
                                         {
-                                            User user = new User()
+                                            if (Number.Length > 11 || Number.Length < 11)
                                             {
-                                                FName = FName,
-                                                SName = SName,
-                                                LName = LName,
-                                                Login = Login,
-                                                Password = Password,
-                                                NumberPhone = Number
-                                            };
-                                            Service.db.Users.Add(user);
-                                            Service.db.SaveChanges();
-                                            OnPropertyChanged();
-                                            MessageBox.Show("Регистрация прошла успешно!");
-                                            Service.frame.Navigate(new Page1());
+                                                MessageBox.Show("Номер введен неправильно!");
+                                            }
+                                            if(Number.Length == 11)
+                                            {
+                                                User user = new User()
+                                                {
+                                                    FName = FName,
+                                                    SName = SName,
+                                                    LName = LName,
+                                                    Login = Login,
+                                                    Password = Password,
+                                                    NumberPhone = Number
+                                                };
+                                                Service.db.Users.Add(user);
+                                                Service.db.SaveChanges();
+                                                OnPropertyChanged();
+                                                MessageBox.Show("Регистрация прошла успешно!");
+                                                Service.frame.Navigate(new Page1());
+                                            }
+                                           
                                         }
                                     }));
 

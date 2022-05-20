@@ -25,29 +25,10 @@ namespace WpfApp2
             InitializeComponent();
             DataContext = new VM_Authorization();
         }
-        //localdbContext db = new();
-        //public User? selUs;
-        //private void Button1_Click(object sender, RoutedEventArgs e)
-        //{
-        //    selUs = db.Users.FirstOrDefault(x => x.Login == Log_Box.Text && x.Password == PassBox.Text);
-        //    if (selUs == null)
-        //    {
-        //        MessageBox.Show("Неверный логин или пароль!");
-        //        return;
-        //    }
-
-        //    if (selUs != null)
-        //    {
-        //        Service.user = selUs;
-        //        MessageBox.Show("Вы вошли");
-        //        Visibility = Visibility.Hidden;
-
-        //    }
-        //}
-
-        //private void Buttno2_Click(object sender, RoutedEventArgs e)
-        //{
-        //    Service.frame.Navigate(new Uri("Page/Page11.xaml", UriKind.Relative));
-        //}
+        private void PassBox_OnPasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (this.DataContext != null)
+            { ((VM_Authorization)this.DataContext).Password = ((PasswordBox)sender).Password; }
+        }
     }
 }

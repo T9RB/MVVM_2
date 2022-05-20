@@ -6,97 +6,89 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2" d:DataContext="{d:DesignInstance Type=local:VM_MW}"
         mc:Ignorable="d"
-        Title="Главное" Height="550" Width="800">
+        Title="Главное" Height="550" Width="900">
 
     <Grid 
-        Background="AntiqueWhite">
+        Background="#ffdadada">
         <Frame
             x:Name="MainFrame"
-            NavigationUIVisibility="Hidden" Margin="241,58,10,59" Height="350" Width="500"/>
-        <StackPanel HorizontalAlignment="Left" Width="241">
+            NavigationUIVisibility="Hidden"
+            Width="570"
+            Height="450" Margin="292,42,58,42"/>
+        <StackPanel HorizontalAlignment="Left" Width="287">
             <Button
-            Background="Beige"
-            Content="БД"
-            Command="{Binding DB}"
-            Visibility="Visible" Height="22" Width="36"
-            Margin="0 0 203 0"
-            FontWeight="Bold"/>
+                Content="БД"
+                Command="{Binding DB}"
+                Visibility="Visible" Height="28" Width="78"
+                Margin="0 0 203 0"
+                FontWeight="Bold"/>
             <Button
-                Background="Beige"
                 x:Name="btn1"
-                Width="150"
+                Width="220"
                 Height="30"
                 Margin="0 20 0 0"
                 Content="1. Посмотреть профиль"
                 Command="{Binding Profile}" 
                 FontWeight="Bold"/>
             <Button
-                Background="Beige"
                 x:Name="btn2"
-                Width="150"
+                Width="220"
                 Height="30"
                 Margin="0 20 0 0"
                 Content="2. Список пользователей"
                 FontWeight="Bold"
                 Command ="{Binding UserList}"/>
             <Button
-                Background="Beige"
                 x:Name="btn3"
-                Width="150"
+                Width="220"
                 Height="30"
                 Margin="0 20 0 0"
                 Content="3. Список доступных задач"
                 Command="{Binding AvaibleTask}"
                  FontWeight="Bold"/>
             <Button
-                Background="Beige"
                 x:Name="btn4"
-                Width="150"
+                Width="220"
                 Height="30"
                 Margin="0 20 0 0"
                 Content="4. Откликнуться на задачу"
                 Command="{Binding TaskList}"
                  FontWeight="Bold"/>
             <Button
-                Background="Beige"
                 x:Name="btn5"
-                Width="150"
+                Width="220"
                 Height="30"
                 Margin="0 20 0 0"
                 Content="5. История задач"
                 Command="{Binding HistoryTask}"
                 FontWeight="Bold"/>
             <Button
-                Background="Beige"
                 x:Name="btn6"
-                Width="150"
+                Width="220"
                 Height="30"
                 Margin="0 20 0 0"
                 Content="6. Изменить статус задачи"
                 Command="{Binding ChangeStatusTask}"
                 FontWeight="Bold"/>
             <Button
-                Background="Beige"
                 x:Name="btn7"
-                Width="150"
+                Width="220"
                 Height="30"
                 Margin="0 20 0 0"
                 Content="7. Фильтр задач по дате"
                 Command="{Binding FiltTask}"
                 FontWeight="Bold"/>
             <Button
-                Background="Beige"
                 x:Name="btn8"
-                Width="150"
+                Width="220"
                 Height="30"
                 Margin="0 20 0 0"
                 Content="8. Найти задачу"
                 Command="{Binding FindTask}"
                 FontWeight="Bold"/>
             <Button
-                Background="Beige"
                 x:Name="btn9"
-                Width="150"
+                Width="220"
                 Height="30"
                 Margin="0 20 0 0"
                 Content="9. Добавить задачу"

@@ -3,39 +3,41 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:WpfApp2" d:DataContext="{d:DesignInstance Type=local:FindTask}"
+      xmlns:local="clr-namespace:WpfApp2"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      d:DataContext="{d:DesignInstance Type=local:FindTask}"
       mc:Ignorable="d" 
-      d:DesignHeight="350" d:DesignWidth="500"
+      d:DesignHeight="450" d:DesignWidth="570"
       Title="Page9">
 
     <Grid
-        Background="AntiqueWhite">
+        Background="#ffdadada">
         <ListBox
-            Name="lbox5" Margin="114,131,114,37"
+            Name="lbox5" Margin="85,145,85,34"
             ItemsSource="{Binding FindedTask}"
-            Background="AntiqueWhite">
+            Background="White">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
                         <TextBlock 
                             Text="{Binding Path=NameTask, UpdateSourceTrigger=PropertyChanged}" 
+                            Style="{StaticResource MaterialDesignBody1TextBlock}"
                             Width="139"
-                            Background="FloralWhite"
                             FontWeight="Bold"/>
                         <TextBlock 
                             Text="{Binding Path=DescriptionTask, UpdateSourceTrigger=PropertyChanged}" 
+                            Style="{StaticResource MaterialDesignBody1TextBlock}"
                             Width="250"
-                            Background="FloralWhite"
                             FontWeight="Bold"/>
                         <TextBlock 
                             Text="{Binding Path=DatePub, UpdateSourceTrigger=PropertyChanged}" 
+                            Style="{StaticResource MaterialDesignBody1TextBlock}"
                             Width="139"
-                            Background="FloralWhite"
                             FontWeight="Bold"/>
                         <TextBlock 
                             Text="{Binding Path=Status.NameStatus, UpdateSourceTrigger=PropertyChanged}" 
+                            Style="{StaticResource MaterialDesignBody1TextBlock}"
                             Width="139"
-                            Background="FloralWhite"
                             FontWeight="Bold"/>
                     </StackPanel>
 
@@ -44,14 +46,11 @@
         </ListBox>
         <TextBox
             x:Name="tblog"
-            Margin="198,61,134,258"
+            Margin="210,44,210,368"
             Text ="{Binding Login}"
-            Background="FloralWhite"/>
-        <TextBlock Margin="93,61,307,258"
-            Text="Логин: "
-            FontWeight="Bold"
-            TextAlignment="Center"/>
-        <Button Margin="366,61,94,258"
+            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+            materialDesign:HintAssist.Hint="Введите логин"/>
+        <Button Margin="230,96,230,322"
                 Content="Поиск"
                 Command="{Binding Find}"
                 FontWeight="Bold"/>

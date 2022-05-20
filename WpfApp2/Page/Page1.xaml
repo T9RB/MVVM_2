@@ -4,57 +4,57 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfApp2" d:DataContext="{d:DesignInstance Type=local:VM_Authorization}"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
-      d:DesignHeight="350" d:DesignWidth="500"
-      Title="Page1" Background="AntiqueWhite">
+      d:DesignHeight="450" d:DesignWidth="570"
+      Title="Page1" Background="#ffdadada">
 
     <Grid>
         <Border 
-            HorizontalAlignment="Center" VerticalAlignment="Center" Width="462" Height="330">
-            <StackPanel 
-                Height="159" Margin="-13,0,-13,0">
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            Width="516" 
+            Height="382"
+            Background="White"
+            CornerRadius="30">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30"
+                                  Color="LightGray"
+                                  ShadowDepth="0"/>
+            </Border.Effect>
+            <StackPanel Margin="-13,68,-13,17">
                 <TextBlock 
-                    Text="Авторизация" TextAlignment="Center" Margin="0 0 0 10"
-                     FontWeight="Bold"/>
-                <DockPanel 
-                    LastChildFill="True" Margin="0,0,0,15">
-                    <TextBlock 
-                        Text="Логин:   "
-                        FontWeight="Bold"
-                        Background="AntiqueWhite"/>
-                    <TextBox
-                        x:Name="Log_Box"
-                        Text="{Binding Login}"
-                        Background="FloralWhite"/>
-                </DockPanel>
-                <DockPanel 
-                    LastChildFill="True" Margin="0 0 0 15">
-                    <TextBlock 
-                        Text="Пароль: "
-                        FontWeight="Bold"
-                        Background="AntiqueWhite"/>
-                    <TextBox 
-                        Name="PassBox"
-                        Text="{Binding Password}"
-                        Background="FloralWhite"/>
-                </DockPanel>
-                <Button 
-                    x:Name="Button1"
-                    Height="20"
-                    Content="Войти" 
-                    Background="FloralWhite"
-                    Command="{Binding Auth}"
-                    FontWeight="Bold"/>
-                <Button 
-                    x:Name="Buttno2"
-                    Height="20"
-                    Content="Регистрация"
-                    Margin="0 5 0 0"
-                    Background="FloralWhite"
-                    Command="{Binding Registr}"
-                    FontWeight="Bold"/>
+                    Text="Авторизация"
+                    Style="{StaticResource MaterialDesignBody1TextBlock}"
+                    TextAlignment="Left" Margin="0 0 0 10"
+                     FontWeight="Bold" Width="414" Height="27"/>
+                <TextBox 
+                    materialDesign:HintAssist.Hint="Введите логин"
+                    Width="358"
+                    Text="{Binding Login}"
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}" Height="44"/>
+                <PasswordBox 
+                    Name="PasswordBox"
+                    materialDesign:HintAssist.Hint="Введите пароль"
+                    Width="358"
+                    PasswordChanged="PassBox_OnPasswordChanged"
+                    Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Height="44"/>
+                <Grid 
+                    Margin=" 0 30 0 20" Width="439">
+                    <Button 
+                        HorizontalAlignment="Left"
+                        Content="Регистрация" Margin="30,0,0,0" Width="130"
+                        Command="{Binding Registr}"/>
+                    <Button 
+                        HorizontalAlignment="Left"
+                        Content="Войти" Margin="270,0,0,0" Width="130"
+                        Command="{Binding Auth}"
+                        CommandParameter="{Binding ElementName=PasswordBox}"/>
+                </Grid>
+
             </StackPanel>
+
         </Border>
+
 
     </Grid>
 </Page>

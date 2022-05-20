@@ -5,35 +5,45 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfApp2" d:DataContext="{d:DesignInstance Type=local:VM_AvaibleTaskList}"
       mc:Ignorable="d" 
-      d:DesignHeight="350" d:DesignWidth="500"
+      d:DesignHeight="450" d:DesignWidth="570"
       Title="Page4">
 
     <Grid
-        Background="White">
-        <TextBlock Margin="153,23,153,297"
+        Background="#ffdadada">
+        <TextBlock Margin="153,34,153,377"
                  Text ="Доступные задачи:"
+                 Style="{StaticResource MaterialDesignBody1TextBlock}"
+                 FontWeight="Bold"
                  TextAlignment="Center"/>
         <ListBox
             Name="lbox2"
-            Height="250" Margin="48,69,48,31"
-            ItemsSource="{Binding AvaibleTaksList}">
+            Height="250" Margin="48,108,48,92"
+            ItemsSource="{Binding AvaibleTaksList}"
+            Background="White">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
                         <TextBlock 
                             Text="{Binding Path=NameTask}" 
+                            Style="{StaticResource MaterialDesignBody1TextBlock}"
+                            FontWeight="Bold"
                             Width="139"/>
                         <TextBlock 
-                            Text="{Binding Path=DescriptionTask}" 
+                            Text="{Binding Path=DescriptionTask}"
+                            Style="{StaticResource MaterialDesignBody1TextBlock}"
+                            FontWeight="Bold"
                             Width="250"/>
                         <TextBlock 
                             Text="{Binding Path=DatePub}" 
+                            Style="{StaticResource MaterialDesignBody1TextBlock}"
+                            FontWeight="Bold"
                             Width="139"/>
                         <TextBlock 
                             Text="{Binding Path=Status.NameStatus}" 
+                            Style="{StaticResource MaterialDesignBody1TextBlock}"
+                            FontWeight="Bold"
                             Width="139"/>
                     </StackPanel>
-
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

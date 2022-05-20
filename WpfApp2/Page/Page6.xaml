@@ -5,37 +5,42 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfApp2" d:DataContext="{d:DesignInstance Type=local:HistoryTasks}"
       mc:Ignorable="d" 
-      d:DesignHeight="350" d:DesignWidth="500"
+      d:DesignHeight="450" d:DesignWidth="570"
       Title="Page6">
 
     <Grid
-        Background="AntiqueWhite">
-        <TextBlock Margin="183,31,183,298"
+        Background="#ffdadada">
+        <TextBlock Margin="183,31,183,383"
                    TextAlignment="Center"
-                   Text ="Ваша история задач"
+                   Text ="Ваша история задач:"
+                   Style="{StaticResource MaterialDesignBody1TextBlock}"
                    FontWeight="Bold"/>
         <ListBox
             Name="lbox4"
-            Height="250" Margin="48,69,48,31"
+            Height="250" Margin="48,89,48,111"
             ItemsSource="{Binding HistoryUserTasks}"
-            Background="AntiqueWhite">
+            Background="White">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
                         <TextBlock 
-                            Text="{Binding Path=NameTask}" 
+                            Text="{Binding Path=NameTask}"
+                            Style="{StaticResource MaterialDesignBody1TextBlock}"
                             Width="139"
                             FontWeight="Bold"/>
                         <TextBlock 
                             Text="{Binding Path=DescriptionTask}" 
+                            Style="{StaticResource MaterialDesignBody1TextBlock}"
                             Width="250"
                             FontWeight="Bold"/>
                         <TextBlock 
                             Text="{Binding Path=DatePub}" 
+                            Style="{StaticResource MaterialDesignBody1TextBlock}"
                             Width="139"
                             FontWeight="Bold"/>
                         <TextBlock 
                             Text="{Binding Path=Status.NameStatus}" 
+                            Style="{StaticResource MaterialDesignBody1TextBlock}"
                             Width="139"
                             FontWeight="Bold"/>
                     </StackPanel>

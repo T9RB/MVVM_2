@@ -3,106 +3,78 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:WpfApp2" d:DataContext="{d:DesignInstance Type=local:VM_Reg}"
+      xmlns:local="clr-namespace:WpfApp2"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      d:DataContext="{d:DesignInstance Type=local:VM_Reg}"
       mc:Ignorable="d" 
-      d:DesignHeight="350" d:DesignWidth="500"
+      d:DesignHeight="450" d:DesignWidth="570"
       Title="Page11">
 
     <Grid
-        Background="AntiqueWhite">
-        <StackPanel>
-            <TextBox
-                x:Name="tb1"
-                Width="150"
-                Height="25"
-                Margin="0 30 110 0"
-                Text="{Binding FName}"
-                Background="FloralWhite"/>
-            <TextBox
-                x:Name="tb2"
-                Width="150"
-                Height="25"
-                Margin="0 25 110 0"
-                Text="{Binding SName}"
-                Background="FloralWhite"/>
-            <TextBlock 
-                Width="80"
-                Height="25"
-                Margin="0 -130 390 0"
-                Text="Фамилия:"
-                TextAlignment="Center"
-                FontWeight="Bold"/>
-            <TextBlock 
-                Width="100"
-                Height="25"
-                Margin="0 -25 390 0"
-                Text="Имя:"
-                TextAlignment="Center"
-                FontWeight="Bold"/>
-            <TextBlock 
-                Width="100"
-                Height="25"
-                Margin="0 25 390 0"
-                Text="Отчество:"
-                TextAlignment="Center"
-                FontWeight="Bold"/>
-            <TextBlock 
-                Width="100"
-                Height="25"
-                Margin="0 25 390 0"
-                Text="Логин:"
-                TextAlignment="Center"
-                FontWeight="Bold"/>
-            <TextBlock 
-                Width="100"
-                Height="25"
-                Margin="0 25 390 0"
-                Text="Пароль:"
-                TextAlignment="Center"
-                FontWeight="Bold"/>
-            <TextBlock 
-                Width="100"
-                Height="25"
-                Margin="0 25 390 0"
-                Text="Номер телефона:"
-                TextAlignment="Center"
-                FontWeight="Bold"/>
-            <TextBox
-                x:Name="tb3"
-                Width="150"
-                Height="25"
-                Margin="0 -330 110 0"
-                Text="{Binding LName}"
-                Background="FloralWhite"/>
-            <TextBox
-                x:Name="tb4"
-                Width="150"
-                Height="25"
-                Margin="0 -230 110 0"
-                Text="{Binding Login}"
-                Background="FloralWhite"/>
-            <TextBox
-                x:Name="tb5"
-                Width="150"
-                Height="25"
-                Margin="0 -130 110 0"
-                Text="{Binding Password}"
-                Background="FloralWhite"/>
-            <TextBox
-                x:Name="tb6"
-                Width="150"
-                Height="25"
-                Margin="0 -30 110 0"
-                Text="{Binding Number}"
-                Background="FloralWhite"/>
-            <Button 
-                Width="100"
-                Height="30"
-                Margin="270 -300 0 0"
-                Content="Регистрация"
-                Command="{Binding Register}"
-                FontWeight="Bold"
-                Background="FloralWhite"/>
-        </StackPanel>
+        Background="#ffdadada">
+        <Border
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center"
+            Background="White"
+            CornerRadius="30"
+            Width="516" 
+            Height="382">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30"
+                                  Color="LightGray"
+                                  ShadowDepth="0"/>
+            </Border.Effect>
+            <StackPanel Margin="10,10,10,10">
+                <TextBox
+                    x:Name="tb1"
+                    Width="220"
+                    materialDesign:HintAssist.Hint="Введите Фамилию"
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                    Margin="0 20 130 0"
+                    Text="{Binding FName}"/>
+                <TextBox
+                    x:Name="tb2"
+                    Width="220"
+                    materialDesign:HintAssist.Hint="Введите Имя"
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                    Margin="0 20 130 0"
+                    Text="{Binding SName}"/>
+                <TextBox
+                    x:Name="tb3"
+                    Width="220"
+                    materialDesign:HintAssist.Hint="Введите Отчетство"
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                    Margin="0 20 130 0"
+                    Text="{Binding LName}"/>
+                <TextBox
+                    x:Name="tb4"
+                    Width="220"
+                    materialDesign:HintAssist.Hint="Введите Логин"
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                    Margin="0 20 130 0"
+                    Text="{Binding Login}"/>
+                <PasswordBox
+                    x:Name="tb5"
+                    Width="220"
+                    materialDesign:HintAssist.Hint="Введите Пароль"
+                    Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
+                    Margin="0 20 130 0"
+                    PasswordChanged="Tb5_OnPasswordChangedReg"/>
+                <TextBox
+                    x:Name="tb6"
+                    Width="220"
+                    materialDesign:HintAssist.Hint="Введите номер (Пример: 79998773232)"
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                    Margin="0 20 130 0"
+                    Text="{Binding Number}"/>
+                <Button 
+                    Width="130"
+                    Height="30"
+                    Margin="270 -300 0 0"
+                    Content="Регистрация"
+                    Command="{Binding Register}"
+                    FontWeight="Bold"/>
+            </StackPanel>
+        </Border>
     </Grid>
 </Page>

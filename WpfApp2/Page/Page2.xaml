@@ -5,58 +5,65 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfApp2"
       mc:Ignorable="d" 
-      d:DesignHeight="350" d:DesignWidth="500"
+      d:DesignHeight="450" d:DesignWidth="570"
       Title="Page2">
 
-    <Grid Background="AntiqueWhite">
+    <Grid Background="#ffdadada">
        <StackPanel>
            <TextBlock
-               Height="20"
+               Height="34"
                Width="100"
                Margin="0,33,368,0"
                Text="Фамилия: "
+               Style="{StaticResource MaterialDesignBody1TextBlock}"
                FontWeight="Bold"/>
            <TextBlock
                Name="tb1"
-               Height="20"
+               Height="34"
                Width="100"
-               Margin="100,-23,270,0"
+               Style="{StaticResource MaterialDesignBody1TextBlock}"
+               Margin="100,-33,270,0"
                Text=""/>
            <TextBlock
-               Height="20"
+               Height="34"
                Width="100"
                Margin="0,33,368,0"
                Text="Имя: "
+               Style="{StaticResource MaterialDesignBody1TextBlock}"
                FontWeight="Bold"/>
            <TextBlock
                Name="tb2"
-               Height="20"
+               Height="34"
+               Style="{StaticResource MaterialDesignBody1TextBlock}"
                Width="100"
-               Margin="100,-23,270,0"
+               Margin="100,-33,270,0"
                Text=""/>
            <TextBlock
-               Height="20"
+               Height="34"
                Width="100"
                Margin="0,33,368,0"
                Text="Отчество: "
+               Style="{StaticResource MaterialDesignBody1TextBlock}"
                FontWeight="Bold"/>
            <TextBlock
                Name="tb3"
-               Height="20"
+               Height="34"
                Width="100"
-               Margin="100,-23,270,0"
-               Text=""/>
+               Style="{StaticResource MaterialDesignBody1TextBlock}"
+               Margin="100,-33,270,0"/>
            <TextBlock
-               Height="20"
+               Height="34"
                Width="100"
                Margin="0,33,368,0"
                Text="Номер: "
+               Style="{StaticResource MaterialDesignBody1TextBlock}"
                FontWeight="Bold"/>
            <TextBlock
                Name="tb4"
-               Height="20"
+               Height="34"
                Width="100"
-               Margin="100,-23,270,0"
+               Style="{StaticResource MaterialDesignBody1TextBlock}"
+               Margin="100,-33,270,0"
                Text=""/>
         </StackPanel>
         
