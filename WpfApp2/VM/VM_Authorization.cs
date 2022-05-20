@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using MaterialDesignThemes.Wpf;
 
 namespace WpfApp2
 {
@@ -25,7 +26,6 @@ namespace WpfApp2
                                             MessageBox.Show("Вы ввели неверный логин или пароль");
                                             return;
                                         }
-
                                         if (selUser != null)
                                         {
                                             Service.user = selUser;

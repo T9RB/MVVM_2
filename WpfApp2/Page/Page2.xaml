@@ -4,6 +4,8 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfApp2"
+      xmlns:mvvmWpf="clr-namespace:MVVM_WPF"
+      d:DataContext="{d:DesignInstance Type=mvvmWpf:VM_Profile_User}"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="570"
       Title="Page2">
@@ -13,7 +15,7 @@
            <TextBlock
                Height="34"
                Width="100"
-               Margin="0,33,368,0"
+               Margin="0,100,368,0"
                Text="Фамилия: "
                Style="{StaticResource MaterialDesignBody1TextBlock}"
                FontWeight="Bold"/>
@@ -23,7 +25,7 @@
                Width="100"
                Style="{StaticResource MaterialDesignBody1TextBlock}"
                Margin="100,-33,270,0"
-               Text=""/>
+               Text="{Binding FName}"/>
            <TextBlock
                Height="34"
                Width="100"
@@ -37,7 +39,7 @@
                Style="{StaticResource MaterialDesignBody1TextBlock}"
                Width="100"
                Margin="100,-33,270,0"
-               Text=""/>
+               Text="{Binding SName}"/>
            <TextBlock
                Height="34"
                Width="100"
@@ -50,7 +52,8 @@
                Height="34"
                Width="100"
                Style="{StaticResource MaterialDesignBody1TextBlock}"
-               Margin="100,-33,270,0"/>
+               Margin="100,-33,270,0"
+               Text="{Binding LName}"/>
            <TextBlock
                Height="34"
                Width="100"
@@ -64,7 +67,12 @@
                Width="100"
                Style="{StaticResource MaterialDesignBody1TextBlock}"
                Margin="100,-33,270,0"
-               Text=""/>
+               Text="{Binding NumberPhone}"/>
+           <Button
+               Width="130"
+               Margin="0 20 0 0"
+               Content="Отчет"
+               Command="{Binding Report}"/>
         </StackPanel>
         
     </Grid>

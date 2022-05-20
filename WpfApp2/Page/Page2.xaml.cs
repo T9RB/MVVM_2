@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MVVM_WPF;
 
 namespace WpfApp2
 {
@@ -23,11 +24,7 @@ namespace WpfApp2
         public Page2()
         {
             InitializeComponent();
-            tb1.Text = Service.user.FName;
-            tb2.Text = Service.user.SName;
-            tb3.Text = Service.user.LName;
-            tb4.Text = Convert.ToString(Service.user.NumberPhone);
-
+            DataContext = new VM_Profile_User();
         }
         
     }
