@@ -4,6 +4,8 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfApp2"
+      xmlns:mvvmWpf="clr-namespace:MVVM_WPF"
+      d:DataContext="{d:DesignInstance Type=mvvmWpf:VM_UserList}"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="570"
       Title="Page3">
@@ -18,7 +20,8 @@
         <ListBox
             Name="lbox1"
             Background="White"
-            Height="250" Margin="48,91,48,109">
+            Height="250" Margin="48,91,48,109"
+            ItemsSource="{Binding User_List}">
            <ListBox.ItemTemplate>
                <DataTemplate>
                    <StackPanel>

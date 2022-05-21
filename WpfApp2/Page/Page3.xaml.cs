@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MVVM_WPF;
 
 namespace WpfApp2
 {
@@ -21,13 +22,10 @@ namespace WpfApp2
     /// </summary>
     public partial class Page3 : Page
     {
-        public ObservableCollection<User> Col_us = new(Service.db.Users);
         public Page3()
         {
             InitializeComponent();
-            Col_us = new(Service.db.Users);
-            lbox1.ItemsSource = Col_us;
-
+            DataContext = new VM_UserList();
         }
 
         
