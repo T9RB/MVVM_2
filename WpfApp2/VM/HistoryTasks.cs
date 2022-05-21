@@ -6,14 +6,14 @@ namespace WpfApp2;
 
 public class HistoryTasks : VM_Super
 {
-    private ObservableCollection<Task> historyusertasks = new(Service.db.Tasks.Include(x => x.Status).Where(x => x.AcceptorId == Service.user.Userid && x.Statusid == 3));
+    private ObservableCollection<Task> _historyusertasks = new(Service.db.Tasks.Include(x => x.Status).Where(x => x.AcceptorId == Service.user.Userid && x.Statusid == 3));
 
     public ObservableCollection<Task> HistoryUserTasks
     {
-        get => historyusertasks;
+        get => _historyusertasks;
         set
         {
-            historyusertasks = value;
+            _historyusertasks = value;
             OnPropertyChanged();
         }
     }

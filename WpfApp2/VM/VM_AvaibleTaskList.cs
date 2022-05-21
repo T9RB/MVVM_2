@@ -10,14 +10,14 @@ namespace WpfApp2
 {
     public class VM_AvaibleTaskList : VM_Super
     {
-        public ObservableCollection<Task> avaibletasklist =
+        private ObservableCollection<Task> _avaibletasklist =
             new(Service.db.Tasks.Include(x => x.Status).Where(x => x.Status.NameStatus == "Не готов"));
         public ObservableCollection<Task> AvaibleTaksList
         {
-            get => avaibletasklist;
+            get => _avaibletasklist;
             set
             {
-                avaibletasklist = value;
+                _avaibletasklist = value;
                 OnPropertyChanged();
             }
         }

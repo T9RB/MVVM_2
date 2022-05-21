@@ -10,13 +10,13 @@ namespace WpfApp2;
 
 public class FiltDate : VM_Super
 {
-    private ObservableCollection<Task> tasks;
-    private RelayCommand filter;
-    private DateTime date1;
-    private DateTime date2;
+    private ObservableCollection<Task> _tasks;
+    private RelayCommand _filter;
+    private DateTime _date1;
+    private DateTime _date2;
 
-    public RelayCommand Filter => filter ??
-                                  (filter = new RelayCommand((x) =>
+    public RelayCommand Filter => _filter ??
+                                  (_filter = new RelayCommand((x) =>
                                   {
                                       FiltTask = new ObservableCollection<Task>(Service.db.Tasks.Include(x => x.Status)
                                           .Where(x => x.DatePub >= Date1 && x.DatePub <= Date2));
@@ -33,30 +33,30 @@ public class FiltDate : VM_Super
 
     public ObservableCollection<Task> FiltTask
     {
-        get => tasks;
+        get => _tasks;
         set
         {
-            tasks = value;
+            _tasks = value;
             OnPropertyChanged();
         }
     }
 
     public DateTime Date1
     {
-        get => date1;
+        get => _date1;
         set
         {
-            date1 = value;
+            _date1 = value;
             OnPropertyChanged();
         }
     }
 
     public DateTime Date2
     {
-        get => date2;
+        get => _date2;
         set
         {
-            date2 = value;
+            _date2 = value;
             OnPropertyChanged();
         }
     }

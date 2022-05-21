@@ -16,19 +16,19 @@ namespace WpfApp2
             Service.frame.Navigate(new Uri("Page/Page1.xaml", UriKind.Relative));
         }
 
-        private RelayCommand profile;
-        private RelayCommand userlist;
-        private RelayCommand avaibletask;
-        private RelayCommand takslist;
-        private RelayCommand historytasks;
-        private RelayCommand changestatustask;
-        private RelayCommand filttask;
-        private RelayCommand findtask;
-        private RelayCommand newtask;
-        private RelayCommand db;
+        private RelayCommand _profile;
+        private RelayCommand _userlist;
+        private RelayCommand _avaibletask;
+        private RelayCommand _takslist;
+        private RelayCommand _historytasks;
+        private RelayCommand _changestatustask;
+        private RelayCommand _filttask;
+        private RelayCommand _findtask;
+        private RelayCommand _newtask;
+        private RelayCommand _db;
 
-        public RelayCommand Profile => profile ??
-                                             (profile = new RelayCommand((x) =>
+        public RelayCommand Profile => _profile ??
+                                             (_profile = new RelayCommand((x) =>
                                              {
                                                  if (Service.user.Login == null)
                                                  {
@@ -41,8 +41,8 @@ namespace WpfApp2
                                                  }
                                              }));
 
-        public RelayCommand UserList => userlist ??
-                                        (userlist = new RelayCommand((x) =>
+        public RelayCommand UserList => _userlist ??
+                                        (_userlist = new RelayCommand((x) =>
                                         {
                                             if (Service.user.Login == null)
                                             {
@@ -55,8 +55,8 @@ namespace WpfApp2
                                             }
                                         }));
 
-        public RelayCommand AvaibleTask => avaibletask ??
-                                           (avaibletask = new RelayCommand((x) =>
+        public RelayCommand AvaibleTask => _avaibletask ??
+                                           (_avaibletask = new RelayCommand((x) =>
                                            {
                                                if (Service.user.Login == null)
                                                {
@@ -68,8 +68,8 @@ namespace WpfApp2
                                                    Service.frame.Navigate(new Page4());
                                                }
                                            }));
-        public RelayCommand TaskList => takslist ??
-                                           (takslist = new RelayCommand((x) =>
+        public RelayCommand TaskList => _takslist ??
+                                           (_takslist = new RelayCommand((x) =>
                                            {
                                                if (Service.user.Login == null)
                                                {
@@ -82,8 +82,8 @@ namespace WpfApp2
                                                }
                                            }));
 
-        public RelayCommand HistoryTask => historytasks ??
-                                           (historytasks = new RelayCommand((x) =>
+        public RelayCommand HistoryTask => _historytasks ??
+                                           (_historytasks = new RelayCommand((x) =>
                                            {
                                                if (Service.user.Login == null)
                                                {
@@ -95,8 +95,8 @@ namespace WpfApp2
                                                    Service.frame.Navigate(new Page6());
                                                }
                                            }));
-        public RelayCommand ChangeStatusTask => changestatustask ??
-                                           (changestatustask = new RelayCommand((x) =>
+        public RelayCommand ChangeStatusTask => _changestatustask ??
+                                           (_changestatustask = new RelayCommand((x) =>
                                            {
                                                if (Service.user.Login == null)
                                                {
@@ -109,8 +109,8 @@ namespace WpfApp2
                                                }
                                            }));
 
-        public RelayCommand FiltTask => filttask ??
-                                        (filttask = new RelayCommand((x) =>
+        public RelayCommand FiltTask => _filttask ??
+                                        (_filttask = new RelayCommand((x) =>
                                         {
                                             if (Service.user.Login == null)
                                             {
@@ -123,8 +123,8 @@ namespace WpfApp2
                                             }
                                         }));
 
-        public RelayCommand FindTask => findtask ??
-                                        (findtask = new RelayCommand((x) =>
+        public RelayCommand FindTask => _findtask ??
+                                        (_findtask = new RelayCommand((x) =>
                                         {
                                             if (Service.user.Login == null)
                                             {
@@ -137,8 +137,8 @@ namespace WpfApp2
                                             }
                                         }));
 
-        public RelayCommand NewTask => newtask ??
-                                       (newtask = new RelayCommand((x) =>
+        public RelayCommand NewTask => _newtask ??
+                                       (_newtask = new RelayCommand((x) =>
                                        {
                                            if (Service.user.Login == null)
                                            {
@@ -150,8 +150,8 @@ namespace WpfApp2
                                                Service.frame.Navigate(new Page10());
                                            }
                                        }));
-        public RelayCommand DB => db ??
-            (db = new RelayCommand((x) =>
+        public RelayCommand DB => _db ??
+            (_db = new RelayCommand((x) =>
             {
                 User user_1 = new()
             {

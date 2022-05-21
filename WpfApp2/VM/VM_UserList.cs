@@ -10,13 +10,13 @@ namespace MVVM_WPF
 {
     public class VM_UserList : VM_Super
     {
-        private ObservableCollection<User> user_list = new(Service.db.Users);
+        private ObservableCollection<User> _user_list = new(Service.db.Users);
         public ObservableCollection<User> User_List
         {
-            get => user_list;
+            get => _user_list;
             set
             {
-                user_list = value;
+                _user_list = value;
                 OnPropertyChanged();
             }
         }

@@ -9,12 +9,12 @@ namespace WpfApp2;
 
 public class ChangeStatusTask : VM_Super
 {
-    private RelayCommand changestatus;
-    private Task selectedtask;
-    private ObservableCollection<Task> Tasks = new(Service.db.Tasks.Include(x => x.Status).Where(x => x.CreatorId == Service.user.Userid && x.Statusid == 2));
+    private RelayCommand _changestatus;
+    private Task _selectedtask;
+    private ObservableCollection<Task> _tasks = new(Service.db.Tasks.Include(x => x.Status).Where(x => x.CreatorId == Service.user.Userid && x.Statusid == 2));
 
-    public RelayCommand ChangeStatus => changestatus ??
-                                       (changestatus = new RelayCommand((x) =>
+    public RelayCommand ChangeStatus => _changestatus ??
+                                       (_changestatus = new RelayCommand((x) =>
                                        {
                                            Task? selTask = SelectedTask;
                                            if (selTask == null)
@@ -28,6 +28,7 @@ public class ChangeStatusTask : VM_Super
                                                SelectedTask.Statusid = 3;
                                                Service.db.SaveChanges();
                                                OnPropertyChanged();
+                                               TaskCollection = new(Service.db.Tasks.Include(x => x.Status).Where(x => x.CreatorId == Service.user.Userid && x.Statusid == 2));
                                                MessageBox.Show("Статус успешно изменен!");
                                            }
                                            
@@ -35,20 +36,20 @@ public class ChangeStatusTask : VM_Super
 
     public ObservableCollection<Task> TaskCollection
     {
-        get => Tasks;
+        get => _tasks;
         set
         {
-            Tasks = value;
+            _tasks = value;
             OnPropertyChanged();
         }
     }
 
     public Task SelectedTask
     {
-        get => selectedtask;
+        get => _selectedtask;
         set
         {
-            selectedtask = value;
+            _selectedtask = value;
             OnPropertyChanged();
         }
     }

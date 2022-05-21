@@ -5,15 +5,16 @@ namespace WpfApp2;
 
 public class VM_Reg : VM_Super
 {
-    private RelayCommand register;
-    private string fname;
-    private string sname;
-    private string lname;
-    private string login;
-    private string password;
-    private string number;
-    public RelayCommand Register => register ??
-                                    (register = new RelayCommand((x) =>
+    private RelayCommand _register;
+    private string _fname;
+    private string _sname;
+    private string _lname;
+    private string _login;
+    private string _password;
+    private string _number;
+    private RelayCommand _back;
+    public RelayCommand Register => _register ??
+                                    (_register = new RelayCommand((x) =>
                                     {
                                         if (FName == null || SName == null || LName == null || Login == null || Password == null || Number == null)
                                         {
@@ -47,63 +48,68 @@ public class VM_Reg : VM_Super
                                            
                                         }
                                     }));
+    public RelayCommand Back => _back ??
+                        (_back = new RelayCommand((x) =>
+                        {
+                            Service.frame.Navigate(new Page1());
+                        }));
 
     public string FName
     {
-        get => fname;
+        get => _fname;
         set
         {
-            fname = value;
+            _fname = value;
             OnPropertyChanged();
         }
     }
 
     public string SName
     {
-        get => sname;
+        get => _sname;
         set
         {
-            sname = value;
+            _sname = value;
             OnPropertyChanged();
         }
     }
 
     public string LName
     {
-        get => lname;
+        get => _lname;
         set
         {
-            lname = value;
+            _lname = value;
             OnPropertyChanged();
         }
     }
 
     public string Login
     {
-        get => login;
+        get => _login;
         set
         {
-            login = value;
+            _login = value;
             OnPropertyChanged();
         }
     }
 
     public string Password
     {
-        get => password;
+        get => _password;
         set
         {
-            password = value;
+            _password = value;
             OnPropertyChanged();
         }
     }
 
     public string Number
     {
-        get => number;
+        get => _number;
         set
         {
-            number = value;
+            _number = value;
             OnPropertyChanged();
         }
     }

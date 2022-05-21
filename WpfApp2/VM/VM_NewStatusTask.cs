@@ -11,12 +11,12 @@ namespace WpfApp2
 {
     public class VM_NewStatusTask : VM_Super
     {
-        public ObservableCollection<Task> tasklist =
+        public ObservableCollection<Task> _tasklist =
             new(Service.db.Tasks.Include(x => x.Status).Where(x => x.Status.NameStatus == "Не готов"));
-        private RelayCommand newstatus;
-        private Task selectedtask;
-        public RelayCommand NewStatus => newstatus ??
-                                         (newstatus = new RelayCommand((x) =>
+        private RelayCommand _newstatus;
+        private Task _selectedtask;
+        public RelayCommand NewStatus => _newstatus ??
+                                         (_newstatus = new RelayCommand((x) =>
                                          {
                                              Task? selTask = SelectedTask;
                                              if (selTask == null)
@@ -39,19 +39,19 @@ namespace WpfApp2
 
         public ObservableCollection<Task> TaksList
         {
-            get => tasklist;
+            get => _tasklist;
             set
             {
-                tasklist = value;
+                _tasklist = value;
                 OnPropertyChanged();
             }
         }
         public Task SelectedTask
         {
-            get => selectedtask;
+            get => _selectedtask;
             set
             {
-                selectedtask = value;
+                _selectedtask = value;
                 OnPropertyChanged();
             }
         }

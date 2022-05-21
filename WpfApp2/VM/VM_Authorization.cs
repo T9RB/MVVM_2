@@ -11,13 +11,13 @@ namespace WpfApp2
 {
     public class VM_Authorization : VM_Super
     {
-        private string login;
-        private string password;
-        private RelayCommand authorization;
-        private RelayCommand registr;
+        private string _login;
+        private string _password;
+        private RelayCommand _authorization;
+        private RelayCommand _registr;
 
-        public RelayCommand Auth => authorization ??
-                                    (authorization = new RelayCommand((x) =>
+        public RelayCommand Auth => _authorization ??
+                                    (_authorization = new RelayCommand((x) =>
                                     {
                                         User? selUser = Service.db.Users.FirstOrDefault(x =>
                                             x.Login == Login && x.Password == Password);
@@ -30,33 +30,33 @@ namespace WpfApp2
                                         {
                                             Service.user = selUser;
                                             MessageBox.Show("Вы вошли!");
-                                            Page1 pg1 = new();
                                             OnPropertyChanged();
+                                            Service.frame.Navigate(new ClearPage());
                                         }
                                     }));
 
-        public RelayCommand Registr => registr ??
-                                       (registr = new RelayCommand((x) =>
+        public RelayCommand Registr => _registr ??
+                                       (_registr = new RelayCommand((x) =>
                                        {
                                            Service.frame.Navigate(new Page11());
                                        }));
 
         public string Login
         {
-            get => login;
+            get => _login;
             set
             {
-                login = value;
+                _login = value;
                 OnPropertyChanged();
             }
         }
 
         public string Password
         {
-            get => password;
+            get => _password;
             set
             {
-                password = value;
+                _password = value;
                 OnPropertyChanged();
             }
         }

@@ -5,12 +5,12 @@ namespace WpfApp2;
 
 public class NewTask : VM_Super
 {
-    private RelayCommand newtask;
-    private string nametask;
-    private string discriptask;
+    private RelayCommand _newtask;
+    private string _nametask;
+    private string _discriptask;
 
-    public RelayCommand NewTask1 => newtask ??
-                                   (newtask = new RelayCommand((x) =>
+    public RelayCommand NewTask1 => _newtask ??
+                                   (_newtask = new RelayCommand((x) =>
                                    {
                                        Page10 pg10 = new();
                                        if (NameTask == null || NameTask == null)
@@ -38,20 +38,20 @@ public class NewTask : VM_Super
 
     public string NameTask
     {
-        get => nametask;
+        get => _nametask;
         set
         {
-            nametask = value;
+            _nametask = value;
             OnPropertyChanged();
         }
     }
 
     public string DiscripTask
     {
-        get => discriptask;
+        get => _discriptask;
         set
         {
-            discriptask = value;
+            _discriptask = value;
             OnPropertyChanged();
         }
     }

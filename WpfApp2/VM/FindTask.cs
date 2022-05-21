@@ -7,12 +7,12 @@ namespace WpfApp2;
 
 public class FindTask : VM_Super
 {
-    private RelayCommand find;
-    private ObservableCollection<Task> findedtask;
-    private string login;
+    private RelayCommand _find;
+    private ObservableCollection<Task> _findedtask;
+    private string _login;
 
-    public RelayCommand Find => find ?? 
-                                (find = new RelayCommand((x) =>
+    public RelayCommand Find => _find ?? 
+                                (_find = new RelayCommand((x) =>
                                 {
                                     FindedTask = new ObservableCollection<Task>(Service.db.Tasks.Include(x => x.Status).Where(x => x.Creator.Login == Login));
                                     if (FindedTask.Count >= 5)
@@ -27,10 +27,10 @@ public class FindTask : VM_Super
 
     public ObservableCollection<Task> FindedTask
     {
-        get => findedtask;
+        get => _findedtask;
         set
         {
-            findedtask = value;
+            _findedtask = value;
             ;
             OnPropertyChanged();
         }
@@ -38,10 +38,10 @@ public class FindTask : VM_Super
 
     public string Login
     {
-        get => login;
+        get => _login;
         set
         {
-            login = value;
+            _login = value;
             OnPropertyChanged();
         }
     }
