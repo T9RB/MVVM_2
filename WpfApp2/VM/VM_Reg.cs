@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System.Collections.ObjectModel;
+using System.Linq;
+using System.Windows;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 
 namespace WpfApp2;
@@ -13,6 +15,7 @@ public class VM_Reg : VM_Super
     private string _password;
     private string _number;
     private RelayCommand _back;
+    private ObservableCollection<User> _user = new(Service.db.Users);
     public RelayCommand Register => _register ??
                                     (_register = new RelayCommand((x) =>
                                     {
@@ -24,11 +27,12 @@ public class VM_Reg : VM_Super
 
                                         if (FName != null && SName != null && LName != null && Login != null && Password != null && Number != null)
                                         {
-                                            if (Number.Length > 11 || Number.Length < 11)
+                                            var userscol = UsersCol.FirstOrDefault(x => x.Login == Login);
+                                            if (Number.Length > 11 || Number.Length < 11 || userscol != null)
                                             {
-                                                MessageBox.Show("Номер введен неправильно!");
+                                                MessageBox.Show("Номер введен неправильно или повторяющийся логин!");
                                             }
-                                            if(Number.Length == 11)
+                                            if(Number.Length == 11 && userscol == null)
                                             {
                                                 User user = new User()
                                                 {
@@ -54,6 +58,15 @@ public class VM_Reg : VM_Super
                             Service.frame.Navigate(new Page1());
                         }));
 
+    public ObservableCollection<User> UsersCol
+    {
+        get => _user;
+        set
+        {
+            _user = value;
+            OnPropertyChanged();
+        }
+    }
     public string FName
     {
         get => _fname;

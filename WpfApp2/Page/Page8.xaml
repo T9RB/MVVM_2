@@ -34,7 +34,7 @@
             </StackPanel>
         </Border>
         <ListBox
-            Name="lbox5" Margin="93,213,93,50"
+            Name="lbox5" Margin="82,214,82,49"
             ItemsSource="{Binding FiltTask}"
             Background="White">
             <ListBox.ItemTemplate>
@@ -42,24 +42,20 @@
                     <StackPanel>
                         <TextBlock 
                             Text="{Binding Path=NameTask, UpdateSourceTrigger=PropertyChanged}" 
-                            Width="139"
-                            FontWeight="Bold"
-                            Background="FloralWhite"/>
+                            Width="250"
+                            FontWeight="Bold"/>
                         <TextBlock 
                             Text="{Binding Path=DescriptionTask, UpdateSourceTrigger=PropertyChanged}" 
                             Width="250"
-                            FontWeight="Bold"
-                            Background="FloralWhite"/>
+                            FontWeight="Bold"/>
                         <TextBlock 
                             Text="{Binding Path=DatePub, UpdateSourceTrigger=PropertyChanged}" 
-                            Width="139"
-                            FontWeight="Bold"
-                            Background="FloralWhite"/>
+                            Width="250"
+                            FontWeight="Bold"/>
                         <TextBlock 
                             Text="{Binding Path=Status.NameStatus, UpdateSourceTrigger=PropertyChanged}" 
-                            Width="139"
-                            FontWeight="Bold"
-                            Background="FloralWhite"/>
+                            Width="250"
+                            FontWeight="Bold"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
